@@ -1,722 +1,817 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>fromis_9 - 프로미스나인</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
-            --white: #ffffff;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo i {
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: #333;
+            overflow-x: hidden;
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            color: var(--white);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             position: relative;
-            display: inline-block;
+            overflow: hidden;
         }
 
-        .section-title h2::after {
+        .hero::before {
             content: '';
             position: absolute;
-            bottom: -10px;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: drift 20s linear infinite;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .logo {
+            font-size: 6rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            animation: fadeInUp 1s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
+            color: white;
+            animation: bounce 2s infinite;
+            z-index: 1;
         }
 
-        .section-title p {
-            color: var(--text);
-            max-width: 700px;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: var(--text);
-        }
-
-        .initiatives {
-            background-color: var(--white);
-        }
-
-        .initiatives-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .initiative-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .initiative-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .initiative-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .initiative-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
-        }
-
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .initiative-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
             margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.8s ease;
         }
 
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+        h2 {
+            font-size: 2.5rem;
+            color: #667eea;
             margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 1rem;
         }
 
-        .footer-column h3::after {
+        h2::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
         }
 
-        .footer-column p {
-            margin-bottom: 1rem;
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .footer-links {
-            list-style: none;
+        .info-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
         }
 
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links li a {
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent);
+        .info-card:hover {
             transform: translateY(-5px);
         }
 
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
         }
 
-        .mobile-menu {
-            display: none;
+        .info-card p {
             font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .member-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
 
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: 900;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.3rem;
+        }
+
+        .member-name-ko {
+            font-size: 1.1rem;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .member-details {
+            color: #666;
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        .member-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .member-details strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .discography {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .album-card {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .album-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .album-year {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+
+        .album-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .album-type {
+            font-size: 0.85rem;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .fandom {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+        }
+
+        .fandom h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .fandom p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .achievements {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .achievement-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .achievement-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .achievement-date {
+            font-size: 0.9rem;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .achievement-desc {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .history-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e8eaf6;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -1.7rem;
+            top: 12px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background: #e8eaf6;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-year {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            background: rgba(0,0,0,0.2);
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .logo {
+                font-size: 3.5rem;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .tagline {
+                font-size: 1.2rem;
+                padding: 0 1rem;
             }
             
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
-                flex-direction: column;
-                padding: 1rem 0;
-                text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            h2 {
+                font-size: 2rem;
             }
             
-            nav ul.active {
-                display: flex;
+            .section {
+                padding: 2rem 1.5rem;
             }
-            
-            nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
-            }
-        }
 
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
-            </div>
-            <nav>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="hero">
+        <div class="logo">fromis_9</div>
+        <div class="tagline">约束你,珍藏你,向着你的偶像成长</div>
+        <div class="scroll-indicator">↓</div>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
-                </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
-            </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
-        <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
+    <div class="container">
+        <div class="section">
+            <h2>关于 fromis_9</h2>
+            <p style="font-size: 1.15rem; line-height: 1.9; color: #555; margin-bottom: 2rem;">
+                <strong style="color: #667eea;">fromis_9</strong>(프로미스나인)是一支充满活力的韩国女子演唱组合。组合名称源自"From Idol School"的缩写,同时在韩语中与"Promise(约束)"发音相似,象征着向粉丝承诺成为最优秀的女团。她们通过2017年Mnet选秀节目《Idol School(偶像学校)》选拔而出,并于2018年1月24日正式出道。
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: #555; margin-bottom: 2rem;">
+                组合最初由9名成员组成,经历了多次变动。2022年7月,成员张圭悧因个人发展方向离队,组合以8人形式继续活动。2024年底,随着与Pledis Entertainment的合约到期,三位成员李赛纶、卢知宣、李瑞渊决定各自发展。2025年1月,五位成员宋河英、朴池原、李娜炅、李彩煐、白知宪签约新公司ASND,继续以fromis_9的名义活动。
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: #555;">
+                fromis_9以清新活力的音乐风格、精湛的舞蹈实力和出色的现场表现力深受粉丝喜爱。代表作《Love Bomb》、《Stay This Way》、《#menow》、《Supersonic》等歌曲展现了她们多样化的音乐魅力,从清纯可爱到帅气性感,每个时期都呈现出不同的风格。
+            </p>
             
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
+            <div class="about-grid">
+                <div class="info-card">
+                    <h3>出道日期</h3>
+                    <p>2018.01.24</p>
+                </div>
+                <div class="info-card">
+                    <h3>现任成员</h3>
+                    <p>5人</p>
+                </div>
+                <div class="info-card">
+                    <h3>官方粉丝名</h3>
+                    <p>Flover</p>
+                </div>
+                <div class="info-card">
+                    <h3>现所属公司</h3>
+                    <p>ASND</p>
+                </div>
+            </div>
+        </div>
 
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
+        <div class="section">
+            <h2>成员介绍</h2>
+            <p style="color: #666; margin-bottom: 2rem; font-size: 1.05rem;">现任5名成员,她们将继续以fromis_9的名义带来更多精彩的舞台表演</p>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-image">하영</div>
+                    <div class="member-info">
+                        <div class="member-name">宋河英</div>
+                        <div class="member-name-ko">Song Ha-young · 송하영</div>
+                        <div class="member-details">
+                            <p><strong>生日:</strong> 1997年9月29日</p>
+                            <p><strong>出生地:</strong> 韩国光州广域市</p>
+                            <p><strong>身高:</strong> 164 cm</p>
+                            <p><strong>血型:</strong> A型</p>
+                            <p><strong>星座:</strong> 天秤座</p>
+                            <p><strong>队内担当:</strong> 副队长、主唱、主舞</p>
+                            <p><strong>MBTI:</strong> INFP</p>
+                            <p><strong>代表emoji:</strong> 🍞🐱</p>
+                            <p><strong>特长:</strong> 吉他演奏、瑜伽</p>
+                        </div>
+                    </div>
+                </div>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+                <div class="member-card">
+                    <div class="member-image">지원</div>
+                    <div class="member-info">
+                        <div class="member-name">朴池原</div>
+                        <div class="member-name-ko">Park Ji-won · 박지원</div>
+                        <div class="member-details">
+                            <p><strong>生日:</strong> 1998年3月20日</p>
+                            <p><strong>出生地:</strong> 韩国釜山海云台区</p>
+                            <p><strong>身高:</strong> 158 cm</p>
+                            <p><strong>血型:</strong> A型</p>
+                            <p><strong>星座:</strong> 双鱼座</p>
+                            <p><strong>队内担当:</strong> 主唱</p>
+                            <p><strong>MBTI:</strong> ESFJ</p>
+                            <p><strong>代表emoji:</strong> 🐶</p>
+                            <p><strong>经历:</strong> 前JYP练习生</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-image">채영</div>
+                    <div class="member-info">
+                        <div class="member-name">李彩煐</div>
+                        <div class="member-name-ko">Lee Chae-young · 이채영</div>
+                        <div class="member-details">
+                            <p><strong>生日:</strong> 2000年5月14日</p>
+                            <p><strong>出生地:</strong> 韩国庆尚北道浦项市</p>
+                            <p><strong>身高:</strong> 169 cm</p>
+                            <p><strong>血型:</strong> B型</p>
+                            <p><strong>星座:</strong> 金牛座</p>
+                            <p><strong>队内担当:</strong> 副唱、主舞、领Rapper</p>
+                            <p><strong>MBTI:</strong> ENFP</p>
+                            <p><strong>代表emoji:</strong> 🐿️</p>
+                            <p><strong>经历:</strong> 前JYP练习生</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-image">나경</div>
+                    <div class="member-info">
+                        <div class="member-name">李娜炅</div>
+                        <div class="member-name-ko">Lee Na-gyung · 이나경</div>
+                        <div class="member-details">
+                            <p><strong>生日:</strong> 2000年6月1日</p>
+                            <p><strong>出生地:</strong> 韩国庆尚北道闻庆市</p>
+                            <p><strong>身高:</strong> 159 cm</p>
+                            <p><strong>血型:</strong> A型</p>
+                            <p><strong>星座:</strong> 双子座</p>
+                            <p><strong>队内担当:</strong> 副唱、领舞、视觉担当</p>
+                            <p><strong>MBTI:</strong> INTP</p>
+                            <p><strong>代表emoji:</strong> 🐣</p>
+                            <p><strong>绰号:</strong> 影子美女</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-image">지헌</div>
+                    <div class="member-info">
+                        <div class="member-name">白知宪</div>
+                        <div class="member-name-ko">Baek Ji-heon · 백지헌</div>
+                        <div class="member-details">
+                            <p><strong>生日:</strong> 2003年4月17日</p>
+                            <p><strong>出生地:</strong> 韩国全罗南道顺天市</p>
+                            <p><strong>身高:</strong> 165 cm</p>
+                            <p><strong>血型:</strong> B型</p>
+                            <p><strong>星座:</strong> 白羊座</p>
+                            <p><strong>队内担当:</strong> 副唱、忙内(老幺)</p>
+                            <p><strong>MBTI:</strong> ISFP</p>
+                            <p><strong>代表emoji:</strong> 🦭</p>
+                            <p><strong>特点:</strong> 热爱学习,取得历史能力鉴定证书</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>发展历程</h2>
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2017年</div>
+                    <div class="timeline-content">
+                        通过Mnet《Idol School(偶像学校)》选秀节目选拔出9名成员。11月30日发行出道前单曲《Glass Shoes》,并在2017 Mnet亚洲音乐大奖日本站进行首次表演。
+                    </div>
+                </div>
                 
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                <div class="timeline-item">
+                    <div class="timeline-year">2018年</div>
+                    <div class="timeline-content">
+                        1月24日发行首张迷你专辑《To.Heart》正式出道。6月发行第二张迷你专辑《To.Day》。9月转至Off The Record Entertainment管理。10月以9人完整体发行特别专辑《From.9》,主打歌《Love Bomb》获得巨大成功,成为组合代表作。
+                    </div>
+                </div>
                 
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelector('nav ul').classList.remove('active');
-                }
-            });
-        });
-    </script>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019年</div>
+                    <div class="timeline-content">
+                        6月发行首张单曲专辑《FUN FACTORY》,主打歌《Fun!》展现活泼清新的魅力,专辑在韩国Gaon榜上获得第2名的好成绩。
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020年</div>
+                    <div class="timeline-content">
+                        9月发行第三张迷你专辑《My Little Society》,主打歌《We Go》凭借出色的表现再次受到关注,展现了更加成熟的音乐风格。
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2021年</div>
+                    <div class="timeline-content">
+                        5月发行第二张单曲专辑《9 WAY TICKET》。8月转至Pledis Entertainment管理。9月1日发行特别单曲《Talk & Talk》,并于9月7日在《The Show》获得出道后首个音乐节目一位奖,距离出道已1323天,成员们激动落泪的场面令人动容。
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2022年</div>
+                    <div class="timeline-content">
+                        1月发行第四张迷你专辑《Midnight Guest》,主打歌《DM》展现成熟魅力。6月发行第五张迷你专辑《from our Memento Box》,主打歌《Stay This Way》获得首个地面台音乐节目一位。7月28日成员张圭悧因个人发展方向离队,组合转为8人体制。
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2023年</div>
+                    <div class="timeline-content">
+                        6月5日发行首张正规专辑《Unlock My World》,这是8人体制的首张专辑。主打歌《#menow》展现自信魅力,在韩国各大音源榜表现出色,组合人气持续上升。
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2024年</div>
+                    <div class="timeline-content">
+                        8月12日发行第三张单曲专辑《Supersonic》,主打歌在韩国Circle榜获得第2名的优异成绩,证明了组合的实力。11月29日宣布与Pledis Entertainment的合约到期不续约。12月31日在《MBC歌谣大祭典》进行8人完整体最后一次表演,成员们拥抱落泪的画面令粉丝动容。
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2025年</div>
+                    <div class="timeline-content">
+                        1月,宋河英、朴池原、李娜炅、李彩煐、白知宪五位成员签约新公司ASND,继续以fromis_9的名义活动。李赛纶、卢知宣、李瑞渊三位成员决定各自发展。6月25日发行第六张迷你专辑《From Our 20's》,以5人体制开启全新篇章。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>主要成就</h2>
+            <div class="achievements">
+                <div class="achievement-item">
+                    <div class="achievement-date">🏆 2021年9月</div>
+                    <div class="achievement-desc">凭借《Talk & Talk》在《The Show》获得出道后首个音乐节目一位,距离出道1323天,成为第四代女团中获得首个一位时间最长的组合之一</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-date">🏆 2022年7月</div>
+                    <div class="achievement-desc">凭借《Stay This Way》在《Music Bank》获得首个地面台音乐节目一位,距离出道1627天</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-date">📊 2022年</div>
+                    <div class="achievement-desc">第五张迷你专辑《from our Memento Box》在韩国Gaon专辑榜获得第1名,这是组合首张登顶专辑榜的作品</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-date">🎵 2023年</div>
+                    <div class="achievement-desc">首张正规专辑《Unlock My World》在韩国Circle专辑榜获得第5名,主打歌《#menow》在各大音源平台表现出色</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-date">🔥 2024年8月</div>
+                    <div class="achievement-desc">第三张单曲专辑《Supersonic》登顶韩国Circle专辑榜,主打歌在Circle数字榜获得第2名,创下组合最高音源成绩</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-date">🎪 2024年</div>
+                    <div class="achievement-desc">参加多个大型音乐节演出,包括Weverse Con Kwave音乐节和Waterbomb Festival,在马尼拉等地举办精彩表演</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-date">🎤 2024年1月</div>
+                    <div class="achievement-desc">举办首次单独演唱会"From Now"于首尔蚕室体育馆,两天演出座无虚席,与Flover度过难忘时光</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-date">🌟 多项荣誉</div>
+                    <div class="achievement-desc">获得亚洲明星盛典Rising赏、Brand of the Year Awards、K Global Heart Dream Awards等多个奖项,并多次获得最佳女团提名</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>音乐作品</h2>
+            <div class="discography">
+                <div class="album-card">
+                    <div class="album-year">2017.11</div>
+                    <div class="album-title">Glass Shoes</div>
+                    <div class="album-type">出道前单曲</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2018.01</div>
+                    <div class="album-title">To.Heart</div>
+                    <div class="album-type">首张迷你专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2018.06</div>
+                    <div class="album-title">To.Day</div>
+                    <div class="album-type">第二张迷你专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2018.10</div>
+                    <div class="album-title">From.9</div>
+                    <div class="album-type">特别专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2019.06</div>
+                    <div class="album-title">FUN FACTORY</div>
+                    <div class="album-type">首张单曲专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2020.09</div>
+                    <div class="album-title">My Little Society</div>
+                    <div class="album-type">第三张迷你专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2021.05</div>
+                    <div class="album-title">9 WAY TICKET</div>
+                    <div class="album-type">第二张单曲专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2021.09</div>
+                    <div class="album-title">Talk & Talk</div>
+                    <div class="album-type">特别单曲</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2022.01</div>
+                    <div class="album-title">Midnight Guest</div>
+                    <div class="album-type">第四张迷你专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2022.06</div>
+                    <div class="album-title">from our Memento Box</div>
+                    <div class="album-type">第五张迷你专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2023.06</div>
+                    <div class="album-title">Unlock My World</div>
+                    <div class="album-type">首张正规专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2024.08</div>
+                    <div class="album-title">Supersonic</div>
+                    <div class="album-type">第三张单曲专辑</div>
+                </div>
+                <div class="album-card">
+                    <div class="album-year">2025.06</div>
+                    <div class="album-title">From Our 20's</div>
+                    <div class="album-type">第六张迷你专辑</div>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 3rem;">代表曲目</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🎵 Love Bomb</div>
+                    <div style="opacity: 0.9; line-height: 1.7;">组合最具代表性的歌曲,清新活泼的旋律和可爱的编舞深受喜爱,MV播放量超过1亿次,是fromis_9的标志性作品</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🎵 Stay This Way</div>
+                    <div style="opacity: 0.9; line-height: 1.7;">首个地面台音乐节目一位获奖曲目,展现了组合成熟的音乐风格,温暖的旋律感动了无数粉丝</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🎵 We Go</div>
+                    <div style="opacity: 0.9; line-height: 1.7;">充满青春活力的歌曲,动感的节奏和精彩的编舞展现了成员们的舞台魅力,成为组合代表作之一</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🎵 DM</div>
+                    <div style="opacity: 0.9; line-height: 1.7;">展现成熟魅力的歌曲,复古风格的音乐和性感的舞蹈让人眼前一亮,标志着组合风格的转变</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🎵 #menow</div>
+                    <div style="opacity: 0.9; line-height: 1.7;">首张正规专辑主打歌,展现自信魅力和强烈个性,在音源榜表现出色,进一步提升了组合知名度</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">🎵 Supersonic</div>
+                    <div style="opacity: 0.9; line-height: 1.7;">2024年回归主打歌,在韩国Circle榜获得第2名,创下组合最高音源成绩,证明了fromis_9持续增长的人气</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="fandom">
+                <h3>🍀 Flover 🍀</h3>
+                <p>fromis_9 与粉丝之间的约定</p>
+                <p style="margin-top: 1rem;">Flover 是 "fromis_9" 和 "clover(四叶草)" 的结合</p>
+                <p>象征着与粉丝共度幸福时光的承诺</p>
+                <p style="margin-top: 1.5rem; font-size: 1.1rem;">官方应援色: 官方未公布统一应援色,但粉丝常用紫色、薰衣草色</p>
+                <p style="margin-top: 0.5rem; font-size: 1.1rem;">应援口号: "fromis_9, 사랑해! (fromis_9, 撒浪嘿!)"</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>特色与风格</h2>
+            <div style="display: grid; gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%); padding: 2rem; border-radius: 15px; border-left: 5px solid #667eea;">
+                    <h3 style="color: #667eea; font-size: 1.3rem; margin-bottom: 1rem;">💫 音乐风格多样化</h3>
+                    <p style="color: #666; line-height: 1.8;">fromis_9的音乐风格非常多样化,从出道初期的清新可爱风格(《Glass Shoes》、《Love Bomb》),到中期的活力青春风格(《We Go》、《Fun!》),再到近期的成熟魅力风格(《DM》、《#menow》、《Supersonic》),每个时期都呈现出不同的魅力,展现了组合的可塑性和音乐实力。</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%); padding: 2rem; border-radius: 15px; border-left: 5px solid #764ba2;">
+                    <h3 style="color: #764ba2; font-size: 1.3rem; margin-bottom: 1rem;">💃 出色的舞蹈实力</h3>
+                    <p style="color: #666; line-height: 1.8;">成员们都具备扎实的舞蹈功底,舞台表现力强。无论是清新可爱的舞蹈还是帅气有力的编舞,她们都能完美驾驭。特别是主舞宋河英和领舞李彩煐、李娜炅,舞蹈实力获得业界认可。整齐的群舞和高难度动作展现了组合的专业性。</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%); padding: 2rem; border-radius: 15px; border-left: 5px solid #667eea;">
+                    <h3 style="color: #667eea; font-size: 1.3rem; margin-bottom: 1rem;">🎤 稳定的现场实力</h3>
+                    <p style="color: #666; line-height: 1.8;">fromis_9以稳定的现场演唱实力著称,在各种音乐节目和演唱会上都展现出色的live表现。成员们在高强度舞蹈的同时仍能保持稳定的声音,这种实力获得了观众和业界的一致好评。特别是主唱宋河英和朴池原的唱功备受赞赏。</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%); padding: 2rem; border-radius: 15px; border-left: 5px solid #764ba2;">
+                    <h3 style="color: #764ba2; font-size: 1.3rem; margin-bottom: 1rem;">😊 亲和力与综艺感</h3>
+                    <p style="color: #666; line-height: 1.8;">成员们性格开朗活泼,在综艺节目中展现出色的综艺感。她们经常参与各种综艺节目和YouTube内容制作,与粉丝保持密切互动。成员之间的默契和友谊也是组合的一大魅力点,经常在直播和综艺中展现温馨有爱的互动。</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e8eaf6 100%); padding: 2rem; border-radius: 15px; border-left: 5px solid #667eea;">
+                    <h3 style="color: #667eea; font-size: 1.3rem; margin-bottom: 1rem;">🌟 励志的成长故事</h3>
+                    <p style="color: #666; line-height: 1.8;">从选秀节目出道到获得首个一位用了1323天,这段漫长而艰辛的旅程让fromis_9成为第四代女团中最具励志色彩的组合之一。她们从未放弃,始终保持积极态度,最终获得了应有的认可和成功。这种坚持不懈的精神深深打动了粉丝,也是组合最宝贵的特质。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>未来展望</h2>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: #555; margin-bottom: 1.5rem;">
+                2025年,fromis_9迎来了全新的篇章。五位成员宋河英、朴池原、李娜炅、李彩煐、白知宪签约新公司ASND,继续以fromis_9的名义活动。虽然阵容有所调整,但成员们对音乐的热情和对舞台的执着从未改变。
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: #555; margin-bottom: 1.5rem;">
+                在2025年6月发行的第六张迷你专辑《From Our 20's》中,5人体制的fromis_9展现了更加成熟的魅力和音乐风格。她们将继续以出色的音乐作品和精彩的舞台表演回馈支持她们的Flover,书写属于fromis_9的新故事。
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: #555;">
+                从2018年到现在,fromis_9经历了许多挑战和变化,但她们始终坚守着对粉丝的约定(Promise),用真诚和努力证明自己。未来,fromis_9将继续带来更多优质的音乐作品,在K-pop舞台上绽放属于她们的光芒。让我们一起期待fromis_9更加精彩的未来!
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">fromis_9 - 프로미스나인</p>
+        <p style="opacity: 0.9; margin-bottom: 1rem;">与 Flover 一起,创造更多美好回忆 💜</p>
+        <p style="opacity: 0.7; font-size: 0.9rem;">本网页仅供粉丝交流使用 · 所有信息基于公开资料整理</p>
+        <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 0.3rem;">fromis_9 Forever 🍀</p>
+    </footer>
 </body>
-
 </html>
